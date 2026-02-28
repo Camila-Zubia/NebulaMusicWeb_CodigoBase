@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Nébula music</title>
-    <meta name="viewport" charset="UTF-8">
-    <link rel="stylesheet" href="./styles/styles.css">
-</head>
-<body>
-    <header>
-        <img src="imgs/nebula-03.svg" alt="Nébula logo" height="80">
-        <h1>Iniciar sesión</h1>
-    </header>
+    <head>
+        <title>Nébula music</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" type="text/css" href="./styles/styles.css"/>
+    </head>
+    <body>
+        <main class="auth-container">
 
-    <main class="auth-container">
-        <section class="auth-card">
-            <form name="form_iniciar_sesion" method="post" action="/autenticacion"
-                enctype="application/x-www-form-urlencoded">
-                <div name="titulo" class="auth-form">
-                    <span>Utiliza tus credenciales para iniciar</span>
-                </div>
-                <div name="correo">
-                    <label for="correo">Correo</label>
-                    <input id="correo" name="correo" type="email" required minlength="5" maxlength="100">
-                </div>
-                <section name="contra">
-                        <label for="contra"> Contraseña</label>
-                        <input type="password" name="contra" id="contra" required autocomplete="off">
-                </section>
-                <div name="options">
-                    <p>¿Aún no tienes una cuenta? <a href="./registro.html">Regístrate aquí</a></p>
-                    <button type="submit">Iniciar</button>
-                    <button type="reset">Cancelar</button>
-                </div>
-            </form>
-        </section>
-    </main>
+            <section class="auth-card">
 
-    <footer>
-        <div>
-            Síguenos en nuestras redes.
+                <form class="auth-form"
+                    name="form_iniciar_sesion" 
+                    method="post" 
+                    action="/autenticacion"
+                    enctype="application/x-www-form-urlencoded">
+
+                    <div name="logo_usuario" class="form-logo">
+                        <img src="./imgs/nebula-03.svg" alt="Logo de nebula music">
+                    </div>
+                    
+                    <div name="titulo" class="form-header">
+                        <h3>Inicia sesión</h3>
+                        <span class="form-subtitle">Utiliza tus credenciales para iniciar</span>
+                    </div>
+
+                    <div name="correo" class="form-group">
+                        <label for="correo">Correo</label>
+                        <input id="correo" name="correo" type="email" required minlength="5" maxlength="100">
+                    </div>
+
+                    <div name="contrasenia" class="form-group">
+                        <label for="contrasenia">Contraseña</label>
+                        <input id="contrasenia" name="contrasenia" type="password" required>
+                    </div>                    
+                    <div name="options">
+                        <p>¿Aún no tienes una cuenta? <a href="./registro.html">Regístrate</a></p>
+                        <button type="submit" class="btn-primary">Iniciar</button>
+                        <button type="reset" class="btn-secondary">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <footer>
             <div>
                 Síguenos en nuestras redes.
                 <div>
