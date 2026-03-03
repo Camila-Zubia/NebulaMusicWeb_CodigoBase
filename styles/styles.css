@@ -1,4 +1,4 @@
-@import url('./global.css');
+@import url('./globals.css');
 
 *{
     box-sizing: border-box;
@@ -56,7 +56,6 @@ nav a{
     color:  var(--nav-links);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s ease;
 }
 
 nav a:hover{
@@ -112,18 +111,17 @@ header span{
 #news{
     margin-top: 30px;
     padding: 20px;
-    display: inline;
 }
 
 
-article{
+.card{
     width: 30%;
     min-width: 270px;
     padding: 10px;
 }
 
 
-article img{
+.card img{
     margin: auto;
     width: 80%;
     max-width: 300px;
@@ -133,7 +131,7 @@ article img{
     object-position: top;
 }
 
-article h3{
+.card h3{
     color: var(--highlight);
     font-family: "Alan Sans", sans-serif;
     font-weight: 700;
@@ -141,7 +139,7 @@ article h3{
     margin: 15px 0px;
 }
 
-article p{ 
+.cards p{ 
     width: 90%;
     display:block;
     margin: auto;
@@ -442,6 +440,48 @@ select:focus{
     padding: 0 20px;
 }
 
+.news-box{
+    display: flex;
+    padding: 80px;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card{
+    background-color: #1a1a2c;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+    max-width: 350px;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3{
+    padding: 20px 20px 10px 20px;
+    color: var(--nav-links);
+}
+
+.card p{
+    padding: 0 20px 20px 20px;
+    color: #ccc;
+    font-size: .95rem;
+}
+
 @media(max-width: 768px){
     .hero{
         height: 30vh;
@@ -454,6 +494,10 @@ select:focus{
         display: flex;
     }
 
+    .main-nav{
+        background-color: #1a1a2c;
+    }
+
     .nav-links{
         position: absolute;
         top: 80px;
@@ -463,7 +507,7 @@ select:focus{
         align-items: center;
         gap: 40px;
         padding: 30px 0;
-        background-color: #000000;
+        background-color: #1a1a2c;
         transform: translateY(-150%);
         transition: 0.3s ease;
     }
@@ -471,6 +515,105 @@ select:focus{
     #menu-toggle:checked ~ .nav-links{
         transform: translateY(0);
     }
+
 }
 
+.comunidad{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.tarjetas{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.usuario{
+    background-color: #1a1a20;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.usuario span{
+    align-self: flex-start;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.premium, .basica {
+    align-self: flex-start;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.premium {
+    background-color: var(--nav-links);
+    color: #fff;
+}
+
+.basica {
+    background-color: #333333;
+    color: #cccccc;
+}
+
+.usuario:hover{
+    border-color: var(--nav-links);
+    transform: translateY(-5px);
+}
+
+.usuario img{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 2px;
+    object-fit: cover;
+}
+
+.info-usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+}
+
+.texto-usuario {
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-usuario h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-color-dark);
+}
+
+.texto-usuario span {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.datos-usuario{
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    text-align: left;
+}
 
